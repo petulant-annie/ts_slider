@@ -1,0 +1,17 @@
+{
+  "name": "slider",
+  "version": "0.0.1",
+  "description": "Simple Typescript slider",
+  "main": "index.ts",
+  "scripts": {
+    "start": "parcel ./src/index.html"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "cssnano": "^4.1.7",
+    "parcel": "^1.10.3"
+  },
+  "dependencies": {
+    "typescript": "^3.2.4"
+  }
+}
