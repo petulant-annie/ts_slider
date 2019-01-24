@@ -81,14 +81,13 @@ class Slider {
     for (let i = 0; i < this.slide.length; i += 1) {
       if (this.slide[i].classList.contains('active')) {
         this.radioBtn[i].style.backgroundColor = '#FFF';
-      } else if (this.slide[i].classList.contains('slide')) {
+      } else {
         this.radioBtn[i].style.backgroundColor = '#000';
       }
     }
   }
 
   changeSlide(): void {
-    this.hideSlides();
     this.showSlide();
     this.fillActiveButton();
   }
@@ -210,8 +209,16 @@ class Slider {
     this.slide[this.current].classList.add('melt-current');
     if (this.current - 1 < 0) {
       this.slide[this.slide.length - 1].classList.add('melt-previous');
+      this.slide[this.slide.length - 1].classList.remove('active');
+      this.slide[this.slide.length - 1].classList.remove('melt-current');
+      this.slide[this.slide.length - 2].className = 'slide';
     } else {
       this.slide[this.current - 1].classList.add('melt-previous');
+      this.slide[this.current - 1].classList.remove('active');
+      this.slide[this.current - 1].classList.remove('melt-current');
+      if (this.current !== 0 && this.current !== 1) {
+        this.slide[this.current - 2].className = 'slide';
+      }
     }
   }
 
